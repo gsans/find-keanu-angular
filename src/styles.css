@@ -1,1 +1,275 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@aws-amplify/ui/src/Theme.css";
+@import "~@aws-amplify/ui/src/Angular.css";
+
+:root {
+  --amazonOrange: #ff9900;
+  --lightAmazonOrange: #ffac31;
+  --darkAmazonOrange: #e88b01;
+  --squidInk: #232f3e;
+  --lightSquidInk: #31465f;
+  --deepSquidInk: #152939;
+  --grey: #828282;
+  --lightGrey: #c4c4c4;
+  --silver: #e1e4ea;
+  --darkBlue: #31465f;
+  --red: #dd3f5b;
+  --white: #ffffff;
+  --light-blue: #00a1c9;
+  --button-color: var(--white);
+  --button-background-color: var(--amazonOrange);
+  --button-click: var(--darkAmazonOrange);
+  --link-color: var(--amazonOrange);
+  --form-color: var(--white);
+  --input-color: var(--deepSquidInk);
+  --input-background-color: var(--white);
+  --font-family: "Amazon Ember", "Helvetica Neue Light", "Helvetica Neue",
+    "Helvetica", "Arial", "sans-serif";
+  --body-background: #f8f4f4;
+  --component-width-desktop: 460px;
+  --component-width-mobile: 100%;
+  --color-primary: #ff9900;
+  --color-primary-accent: #232f3e;
+  --color-primary-highlight: #ffc46d;
+  --color-background: #232f3e;
+  --color-secondary: #152939;
+  --color-secondary-accent: #31465f;
+  --color-danger: #dd3f5b;
+  --color-error: #d0021b;
+  --color-accent-brown: #828282;
+  --color-accent-blue: #e1e4ea;
+  --gradient-blaze: linear-gradient(270deg, #ffc300 0%, #ff9000 100%);
+  --color-blue: #007eb9;
+  --color-purple: #527fff;
+  --color-gray: #828282;
+  --color-white: #ffffff;
+  --input-border: 1px solid #c4c4c4;
+  --input-padding: 0.5em 0.5em 0.3em 1em;
+  --box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.15);
+  --button-height: 42px;
+  --interactions-conversation-height: 250px;
+  --ion-color-primary: #ff9900;
+  --ion-color-primary-rgb: 255, 153, 0;
+  --ion-color-primary-contrast: #fff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #232f3e;
+  --ion-color-primary-tint: #ffc46d;
+}
+
+html,
+body {
+  font-family: "Amazon Ember", "Helvetica", "sans-serif";
+  margin: 0;
+}
+a {
+  color: #ff9900;
+}
+h1 {
+  font-weight: 300;
+}
+.app {
+  width: 100%;
+}
+.app-header {
+  color: white;
+  text-align: center;
+  background: linear-gradient(30deg, #f90 55%, #ffc300);
+  width: 100%;
+  margin: 0 0 1em 0;
+  padding: 3em 0 3em 0;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.app-logo {
+  width: 126px;
+  margin: 0 auto;
+}
+.app-body {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.form-body button {
+  background-color: #ff9900;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  padding: 1em;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+.app-body button:hover {
+  opacity: 0.8;
+}
+
+input:not([type="checkbox"]),
+select {
+  width: 100px;
+  padding: 6px;
+  font-size: 14px;
+  color: var(--input-color);
+  background-color: var(--input-background-color);
+  background-image: none;
+  border: 1px solid var(--lightGrey);
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin: 10px;
+  height: 35px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+  width: 180px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  /* height: 100%; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backface-visibility: hidden;
+  margin: 25px;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
+}
+
+.name {
+  font-style: italic;
+}
+.symbol {
+  color: #999;
+}
+.price {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+textarea:not([rows]),
+.translation-output {
+  max-height: 600px;
+  min-height: 120px;
+}
+textarea {
+  xdisplay: block;
+  xmax-width: 100%;
+  xmin-width: 100%;
+  padding: 0.625em;
+}
+textarea {
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+textarea {
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-radius: 4px;
+  color: #363636;
+
+  font-family: "Roboto", arial, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  xpadding-left: 28px;
+  resize: none;
+}
+
+textarea.xl {
+  width: 200%;
+}
+
+/* remove blue highlight */
+textarea:hover,
+input:hover:not([type="checkbox"]),
+textarea:active,
+input:active:not([type="checkbox"]),
+textarea:focus,
+input:focus:not([type="checkbox"]),
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active,
+select {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.translation-row {
+  width: 90%;
+  margin: 0px;
+}
+
+.translation-output textarea {
+  background-color: #eee;
+  border-radius: 0 4px 4px 0;
+}
+.translation-input textarea {
+  border-radius: 4px 0 0 4px;
+  border-right: 10px solid #dbdbdb;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #dbdbdb;
+  color: #666666;
+}
+
+.form-body select.detected {
+  border-color: rgba(255, 153, 0, 1);
+  border-width: 3px;
+}
+
+.form-body select.not-available {
+  border-color: #dd3f5b;
+  border-width: 3px;
+}
