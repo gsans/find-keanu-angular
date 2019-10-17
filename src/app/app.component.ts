@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  addFile(event) {
+  findKeanu(event) {
     this.showResult = false;
     this.celebrities = [];
     this.resultMessage = "Looking for Keanu..."
@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
         celebrityDetection: true
       }
     }).then(result => {
+      console.log(result);
       if (result.entities.length>0) {
         this.celebrities = [];
         let keanuFound = result.entities.filter( (entity) => {
