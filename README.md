@@ -1,27 +1,48 @@
-# AmplifyAppMlTest
+# Identify fake *Keanu* selfies with AWS Amplify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
+![Find Keanu](https://i.imgur.com/mIhPGXf.png "Find Keanu")
 
-## Development server
+This app shows how to use Predictions with AWS Amplify and Angular to make sure Keanu is really in a picture. Predictions uses Amazon Rekognition.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> To improve accuracy use high definition images whenever possible.
 
-## Code scaffolding
+```
+Predictions.identify({
+  entities: {
+    source: { file },
+    celebrityDetection: true
+  }
+}).then(response)
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+Once familiar with this API you can move to more advanced use cases to search, filter and categorise big volumes of pictures!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Deploy with the AWS Amplify Console
 
-## Running unit tests
+The AWS Amplify Console provides hosting for fullstack serverless web apps. [Learn more](https://console.amplify.aws). Deploy this app to your AWS account with a single click:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/gsans/find-keanu-angular)
 
-## Running end-to-end tests
+The Amplify Console will fork this repo in your GitHub account, and then build and deploy your backend and frontend in a single workflow. Your app will be available at `https://master.APPID.amplifyapp.com`.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Run locally with the Amplify CLI
 
-## Further help
+1. Install and configure the Amplify CLI
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+  npm install -g @aws-amplify/cli
+  amplify configure
+```
+
+2. Install and configure the Amplify CLI
+
+```
+  amplify init --app https://github.com/gsans/find-keanu-angular
+```
+  
+>The init command clones the GitHub repo, initializes the CLI, creates a ‘sampledev’ environment in CLI, detects and adds categories, provisions the backend, pushes the changes to the cloud, and starts the app.
+
+3. Provisioning the frontend and backend
+
+Once the process is complete, the CLI will automatically open the app in your default browser.
