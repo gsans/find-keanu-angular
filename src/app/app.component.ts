@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   showResult = false;
   keanuFound = false;
   celebrities = [];
+  previewSrc = undefined;
 
   @ViewChild('fileInput', { static: false })
   fileInput: ElementRef;
@@ -35,6 +36,7 @@ export class AppComponent implements OnInit {
       return;
     }
     const file = files[0];
+    this.setPreview(file);
     Predictions.identify({
       entities: {
         source: {
@@ -79,4 +81,9 @@ export class AppComponent implements OnInit {
     })
   }
 
+  setPreview(file) {
+    const reader = new FileReader();
+    reader.onload = _ => this.previewSrc = reader.result;
+    reader.readAsDataURL(file);
+  }
 }

@@ -15,10 +15,32 @@
           <img *ngIf="keanuFound" class="thumbnail-image" src="assets/success.png" />
           <img *ngIf="!keanuFound" class="thumbnail-image" src="assets/fail.png" />
         </div>
-        <div *ngIf="celebrities.length>0">
-          <div *ngFor="let e of celebrities">
-            <a href="http://{{e.metadata.urls[0]}}" target="_blank">{{e.metadata.name || 'Not found'}}</a>
+        <div class="row">
+          <div class="preview">
+            <img *ngIf="showResult && celebrities.length>0 && previewSrc" class="img" id="preview" [src]="previewSrc" alt="preview" />
+            <ng-container *ngIf="celebrities.length>0">
+              <ng-container *ngFor="let e of celebrities">
+                <div class="bounding-box" 
+                  [style.top.%]="e.boundingBox.top*100"
+                  [style.left.%]="e.boundingBox.left*100"
+                  [style.width.%]="e.boundingBox.width*100"
+                  [style.height.%]="e.boundingBox.height*100"
+                  ></div>
+                <ng-container *ngFor="let lm of e.landmarks">
+                  <div class="landmark"
+                    [style.top.%]="lm.y*100"
+                    [style.left.%]="lm.x*100"
+                  ><svg class="circle-svg" is="true" preserveAspectRatio="xMidYMin"><circle cx="2" cy="2" r="2" fill="#FFF"></circle></svg></div>
+                </ng-container>
+              </ng-container>
+            </ng-container>
           </div>
+        </div>
+        <div *ngIf="celebrities.length>0">
+          <div *ngIf="!keanuFound">Wait a minute! You may have met a celebrity after all...</div>
+          <span *ngFor="let e of celebrities">
+            <a href="http://{{e.metadata.urls[0]}}" target="_blank">{{e.metadata.name || 'Not found'}}</a>&nbsp;
+          </span>
         </div>
       </div>
     </form> 
