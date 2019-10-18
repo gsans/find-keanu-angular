@@ -10,7 +10,7 @@ import Predictions from '@aws-amplify/predictions';
 })
 export class AppComponent implements OnInit {
   public createForm: FormGroup;
-  resultMessage = "Pick a selfie or image to identify.";
+  resultMessage = "Pick a selfie or image to find Keanu.";
   showResult = false;
   keanuFound = false;
   celebrities = [];

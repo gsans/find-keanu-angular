@@ -162,6 +162,7 @@ input.file {
   max-width: 400px;
   filter: grayscale(100%);
   mix-blend-mode: multiply;
+  height: 200px;
 }
 
 .row {
