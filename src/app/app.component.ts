@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
       return;
     }
     const file = files[0];
+    this.selected = undefined;
     this.findKeanu(file);
   }
 
