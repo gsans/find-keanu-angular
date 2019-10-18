@@ -1,5 +1,5 @@
 .app-body {
-  width: 60%;
+  width: 80%;
   margin: 0 auto 100px;
   text-align: center;
 }
@@ -242,6 +242,29 @@ input.file {
 }
 .circle-svg circle {
   fill: rgba(255, 255, 255, 1);
+}
+
+.preselection img {
+  width: 100px;
+  border-radius: 5px;
+  border: 4px #eee solid;
+  margin: 2px 4px 2px 4px;
+  opacity: 1;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+.preselection img:not(.inactive):hover {
+  border: 4px #ff9900 solid;
+}
+.app-body label {
+  cursor: pointer;
+}
+img.inactive, label.inactive {
+  opacity: 0.6;
+  cursor: default;
+}
+img.selected {
+  border: 4px #ff9900 solid;
 }
 
 @media only screen and (max-width: 767px) {

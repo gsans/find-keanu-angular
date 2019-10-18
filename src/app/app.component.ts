@@ -15,6 +15,8 @@ export class AppComponent implements OnInit {
   keanuFound = false;
   celebrities = [];
   previewSrc = undefined;
+  searchInProgress = false;
+  selected = undefined;
 
   @ViewChild('fileInput', { static: false })
   fileInput: ElementRef;
@@ -27,15 +29,38 @@ export class AppComponent implements OnInit {
     });
   }
 
-  findKeanu(event) {
-    this.showResult = false;
-    this.celebrities = [];
-    this.resultMessage = "Looking for Keanu..."
+  findKeanuEvent(event) {
     const { target: { files } } = event;
     if (files.length===0) {
       return;
     }
     const file = files[0];
+    this.findKeanu(file);
+  }
+
+  dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+  }
+
+  pick(event, selection) {
+    if (this.searchInProgress) return;
+    this.selected = selection;
+    const { target: { src } } = event;
+    var file = this.dataURLtoBlob(src);
+    this.findKeanu(file);
+  }
+
+  findKeanu(file) {
+    if (this.searchInProgress) return;
+    this.searchInProgress = true;
+    this.showResult = false;
+    this.celebrities = [];
+    this.resultMessage = "Looking for Keanu..."
     this.setPreview(file);
     Predictions.identify({
       entities: {
@@ -78,6 +103,7 @@ export class AppComponent implements OnInit {
     .finally(() => {
       // reset input file
       this.fileInput.nativeElement.value = "";
+      this.searchInProgress = false;
     })
   }
 
