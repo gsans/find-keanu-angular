@@ -1,11 +1,20 @@
-# Identify fake *Keanu* selfies with AWS Amplify
+# FindKeanu. Identify fake selfies with AWS Amplify and Angular
 
-![Find Keanu](https://i.imgur.com/mIhPGXf.png "Find Keanu")
+![Keanu](https://i.imgur.com/mIhPGXf.png "Keanu")
 
-This app shows how to use Predictions with AWS Amplify and Angular to make sure Keanu is really in a picture. Predictions uses Amazon Rekognition.
+This app shows how to use **Predictions** with **AWS Amplify** and **Angular** to make sure Keanu Reeves is really in a picture. Predictions uses **Amazon Rekognition**.
+
+![FindKeanu](https://i.imgur.com/oc3sZTA.gif "FindKeanu")
+
+Features included:
+- Predictions identify entities for celebrities
+- Identify Keanu Reeves in pictures
+- Display bounding box and landmarks for Keanu or any other celebrities registered in Amazon Rekognition.
+- Display first additional information link if available
 
 > To improve accuracy use high definition images whenever possible.
 
+Predictions usage example:
 ```
 Predictions.identify({
   entities: {
@@ -15,6 +24,7 @@ Predictions.identify({
 }).then(response)
 ```
 
+![Output](https://imgur.com/YMOez3F.gif)
 
 Once familiar with this API you can move to more advanced use cases to search, filter and categorise big volumes of pictures!
 
