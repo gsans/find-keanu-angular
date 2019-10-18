@@ -29,8 +29,8 @@
                 </div>
                 <ng-container *ngFor="let lm of e.landmarks">
                   <div class="landmark"
-                    [style.top.%]="lm.y*100"
-                    [style.left.%]="lm.x*100"
+                    [style.top]="'calc(' + lm.y*100 +'% - 2px)'"
+                    [style.left]="'calc(' + lm.x*100 +'% - 2px)'"
                   ><svg class="circle-svg" is="true" preserveAspectRatio="xMidYMin"><circle cx="2" cy="2" r="2" fill="#FFF"></circle></svg></div>
                 </ng-container>
               </ng-container>
