@@ -4,7 +4,7 @@
 
 This app shows how to use **Predictions** with **AWS Amplify** and **Angular** to make sure Keanu Reeves is really in a picture. Predictions uses **Amazon Rekognition**.
 
-![FindKeanu](https://i.imgur.com/oc3sZTA.gif "FindKeanu")
+![FindKeanu](https://i.imgur.com/eOf9Gko.gif "FindKeanu")
 
 Features included:
 - Predictions identify entities for celebrities
@@ -24,7 +24,7 @@ Predictions.identify({
 }).then(response)
 ```
 
-![Output](https://imgur.com/YMOez3F.gif)
+![Output](https://i.imgur.com/0ANzOZx.jpg)
 
 Once familiar with this API you can move to more advanced use cases to search, filter and categorise big volumes of pictures!
 
