@@ -1,6 +1,7 @@
 # FindKeanu. Identify fake selfies with AWS Amplify and Angular
 
 ![Keanu](https://i.imgur.com/mIhPGXf.png "Keanu")
+3D model by [Caleb_Rolph](https://sketchfab.com/3d-models/john-wick-0e50903a05464728850dab71c1e94fa3)*.
 
 This app shows how to use **Predictions** with **AWS Amplify** and **Angular** to make sure Keanu Reeves is really in a picture. Predictions uses **Amazon Rekognition**.
 
